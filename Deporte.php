@@ -25,25 +25,26 @@
         <p>Dalo todo con en tus entrenamientos</p>
     </section>
     <?php
-    $sql = "SELECT * FROM productos";
+    $sql = "SELECT * FROM productos WHERE categoria = 'deporte'";
     $result = $conn->query($sql);
     ?>
 
-    <?php
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) { ?>
-            <section class="Parrafo2">
-                <ul>
-                    <li class="Parrafo2li">
-                        <img src="<?= htmlspecialchars($row['Imagen']) ?>" alt="">
-                        <p><?= htmlspecialchars($row['nombre']) ?></p>
-                        <p class="precio"><?= htmlspecialchars($row['Precio']) ?>€</p>
-                        <button class="btn comprar">Comprar</button>
-                    </li>
-                </ul>
-            </section>
-        <?php }
-    } ?>
+    <section class="Parrafo2">
+        <ul>
+        <?php
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) { ?>
+                <li class="Parrafo2li">
+                    <img src="<?= htmlspecialchars($row['Imagen']) ?>" alt="">
+                    <p><?= htmlspecialchars($row['nombre']) ?></p>
+                    <p class="precio"><?= htmlspecialchars($row['Precio']) ?>€</p>
+                    <button class="btn comprar">Comprar</button>
+                </li>
+            <?php }
+        } ?>
+        </ul>
+    </section>
+
     <section class="Parrafo4">
         <center>
             <p>Coach lukas mueller te muestra las zapatillas en accion desde alemania mostrando como es una perparacion
