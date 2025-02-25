@@ -1,3 +1,8 @@
+<?php
+    include 'connection.php';
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -13,8 +18,8 @@
          AreaStyle
          <ul>
             <li><a href="Cart.html">Carrito</a></li>
-            <li><a href="Deporte.html">Deporte</a></li>
-            <li><a href="Formal.html">Formal</a></li>
+            <li><a href="Deporte.php">Deporte</a></li>
+            <li><a href="Formal.php">Formal</a></li>
             <li><a href="Street.html">Streetwear</a></li>
             <li><a href="PreColaboracion.html">Colaboraciones</a></li>
             <li><a href="Form.html">Únete a la familia</a></li>
@@ -37,7 +42,7 @@
       <ul class="Parrafo2">
          <li>
             <p>FORMAL</p>
-            <a href="./Formal.html"><img src="Images/formal.jpg" alt="formal"></a>
+            <a href="./Formal.php"><img src="Images/formal.jpg" alt="formal"></a>
          </li>
          <li>
             <p>Casual</p>
@@ -45,7 +50,7 @@
          </li>
          <li>
             <p>Deportivo dominguero</p>
-            <a href="Deporte.html"><img src="Images/deporte.png" alt="Deporte"></a>
+            <a href="Deporte.php"><img src="Images/deporte.png" alt="Deporte"></a>
          </li>
       </ul>
    </section>
