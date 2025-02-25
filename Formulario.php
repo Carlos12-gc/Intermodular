@@ -9,42 +9,38 @@
     <title>Te damos la bienvenida</title>
 </head>
 <body>
-    <form action="form.php" method="post">
-       
-
+    <form action="login.php" method="post">
         <div id="formulario">
             <center>       
                 <h1>Registro de usuarios</h1>
             </center>
-                <label for="nombre"></label>
-                 <input type="text" name="nombre" placeholder="Introduce tu nombre" required>
+            <label for="nombre"></label>
+            <input type="text" name="nombre" placeholder="Introduce tu nombre" required>
 
-           
+            <label for="apellido"></label>
+            <input type="text" name="apellido" placeholder="Introduce tu apellido" required>
 
-            
-                <label for="apellido"></label>
-                <input type="text" name="apellido" placeholder="Introduce tu apellido" required>
-           
+            <label for="correoElectronico"></label>
+            <input type="email" name="correoElectronico" placeholder="Introduce tu Email" required>
 
-            
-                <label for="correoElectronico"></label>
-                <input type="text" name="correoElectronico" placeholder="Introduce tu Email" required>
-            
-                <button type="submit">Enviar</button>
+            <label for="password"></label>
+            <input type="password" name="password" placeholder="Introduce tu contraseña" required>
+
+            <button type="submit" name="register">Enviar</button>
         </div>
-
-
-        <div id= "sesion">
+    </form>
+    <form action="login.php" method="post">
+        <div id="sesion">
             <center>
                 <h1>Inicio de sesion</h1>
             </center>
-            <label for="nombre"></label>
-            <input type="text" placeholder="Introduce tu nombre">
+            <label for="username"></label>
+            <input type="text" name="username" placeholder="Introduce tu nombre" required>
 
-            <label for="correoElectronico"></label>
-            <input type="text" placeholder="Introduce tu Email">
+            <label for="password"></label>
+            <input type="password" name="password" placeholder="Introduce tu contraseña" required>
 
-            <button type="submit">Inciar sesion</button>
+            <button type="submit" name="login">Iniciar sesion</button>
         </div>
     </form>
 </body>
