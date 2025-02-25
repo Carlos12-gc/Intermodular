@@ -1,3 +1,7 @@
+<?php
+    include 'connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,27 +50,25 @@
         <div class="producto" data-id="1" data-nombre="Producto 1" data-precio="10">
             <h3>Producto 1</h3>
             <p>Precio:</p>
-            <button onclick="agregarAlCarrito(1,'Prodcuto 1,10')">Añadir al carrito</button>
-
+            <button onclick="agregarAlCarrito(1,'Producto 1',10)">Añadir al carrito</button>
         </div>
 
-        <div class="producto" data-id="2" data-nombre="Prodcuto 2" data-precio="20">
-            <h3>Prodcuto 2</h3>
-            <p>Precio</p>
-            <button onclick="agregarAlCarrito(2,'Prodcuto 2, 20')">Añadir al carrito</button>
+        <div class="producto" data-id="2" data-nombre="Producto 2" data-precio="20">
+            <h3>Producto 2</h3>
+            <p>Precio:</p>
+            <button onclick="agregarAlCarrito(2,'Producto 2',20)">Añadir al carrito</button>
         </div>
     </div>
-
 
     <div class="carrito">
         <h2>Carrito de Compras</h2>
         <ul id="lista-carrito"></ul>
-        <p>Total: $<span id="Total">0</span></p>
-        <button onclick="procederCompra()">Proceder al formuarlio de compra</button>
+        <p>Total: €<span id="Total">0</span></p>
+        <button onclick="procederCompra()">Proceder al formulario de compra</button>
     </div>
 
-    <div id="formuarlio-compra" style="display: none;">
-        <h2>Fomrulario de comra</h2>
+    <div id="formulario-compra" style="display: none;">
+        <h2>Formulario de compra</h2>
         <form action="compra.html" method="post">
             <label for="nombre">Nombre</label>
             <input type="text" name="nombre" id="nombre">
@@ -77,7 +79,5 @@
             <button type="submit">Realizar compra</button>
         </form>
     </div>
-
-
 </body>
 </html>

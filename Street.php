@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="StyleStreet.css">
+    <script src="Script.js"></script> <!-- Incluir Script.js -->
 </head>
 <body>
     <header>
@@ -23,32 +24,12 @@
     <section class="Parrafo1">
         <p>Bienvenido a nuestra página de moda urbana.</p>
     </section>
-    <section class="Parrafo2">
-        <ul>
-
-        <?php
+    <?php
     $sql = "SELECT * FROM productos WHERE categoria = 'Streetwear'";
     $result = $conn->query($sql);
     ?>
 
-
-        <?php
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) { ?>
-                <li class="Parrafo2li">
-                    <img src="<?= htmlspecialchars($row['Imagen']) ?>" alt="">
-                    <p><?= htmlspecialchars($row['nombre']) ?></p>
-                    <p class="precio"><?= htmlspecialchars($row['Precio']) ?>€</p>
-                    <button class="btn comprar">Comprar</button>
-                </li>
-            <?php }
-        } ?>
-        </ul>
-    </section>
-
-
-
-    <section class="contenedor-productos">
+    <section class="Parrafo2">
         <ul>
         <?php
         if ($result->num_rows > 0) {
@@ -57,7 +38,7 @@
                     <img src="<?= htmlspecialchars($row['Imagen']) ?>" alt="">
                     <p><?= htmlspecialchars($row['nombre']) ?></p>
                     <p class="precio"><?= htmlspecialchars($row['Precio']) ?>€</p>
-                    <button class="btn comprar">Comprar</button>
+                    <button class="btn comprar" onclick="agregarAlCarrito(<?= $row['id'] ?>, '<?= htmlspecialchars($row['nombre']) ?>', <?= $row['Precio'] ?>)">Comprar</button>
                 </li>
             <?php }
         } ?>

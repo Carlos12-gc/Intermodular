@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="StyleStreet.css">
+    <script src="Script.js"></script> <!-- Incluir Script.js -->
 </head>
 <body>
     <header>
@@ -38,7 +39,7 @@
                     <img src="<?= htmlspecialchars($row['Imagen']) ?>" alt="">
                     <p><?= htmlspecialchars($row['nombre']) ?></p>
                     <p class="precio"><?= htmlspecialchars($row['Precio']) ?>€</p>
-                    <button class="btn comprar">Comprar</button>
+                    <button class="btn comprar" onclick="agregarAlCarrito(<?= $row['id'] ?>, '<?= htmlspecialchars($row['nombre']) ?>', <?= $row['Precio'] ?>)">Comprar</button>
                 </li>
             <?php }
         } ?>

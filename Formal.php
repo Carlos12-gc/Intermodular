@@ -2,8 +2,6 @@
     include 'connection.php';
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formal</title>
     <link rel="stylesheet" href="StyleFormal.css">
+    <script src="Script.js"></script> 
 </head>
 <body>
     <header>
@@ -18,7 +17,7 @@
         <nav>
             <ul>
                 <li><img src="/ProyectoIntermodular/Images/mssd.jpg" alt="MasimoDutti"></li>
-               <li><img src="/ProyectoIntermodular//Images/pik.webp" alt="Pikolinos"></li>
+                <li><img src="/ProyectoIntermodular/Images/pik.webp" alt="Pikolinos"></li>
                 <li><img src="/ProyectoIntermodular/Images/TommyHlfg.png" alt="TommyHlfg"></li>
             </ul>
         </nav>
@@ -40,30 +39,11 @@
                     <img src="<?= htmlspecialchars($row['Imagen']) ?>" alt="">
                     <p><?= htmlspecialchars($row['nombre']) ?></p>
                     <p class="precio"><?= htmlspecialchars($row['Precio']) ?>€</p>
-                    <button class="btn comprar">Comprar</button>
+                    <button class="btn comprar" onclick="agregarAlCarrito(<?= $row['id'] ?>, '<?= htmlspecialchars($row['nombre']) ?>', <?= $row['Precio'] ?>)">Comprar</button>
                 </li>
             <?php }
         } ?>
         </ul>
     </section>
-
-
-
-    <section class="contenedor-productos">
-        <ul>
-        <?php
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) { ?>
-                <li class="Parrafo2li">
-                    <img src="<?= htmlspecialchars($row['Imagen']) ?>" alt="">
-                    <p><?= htmlspecialchars($row['nombre']) ?></p>
-                    <p class="precio"><?= htmlspecialchars($row['Precio']) ?>€</p>
-                    <button class="btn comprar">Comprar</button>
-                </li>
-            <?php }
-        } ?>
-        </ul>
-    </section>
-    
 </body>
 </html>

@@ -17,12 +17,12 @@
       <nav class="logo">
          AreaStyle
          <ul>
-            <li><a href="Cart.html">Carrito</a></li>
+            <li><a href="Cart.php">Carrito</a></li>
             <li><a href="Deporte.php">Deporte</a></li>
             <li><a href="Formal.php">Formal</a></li>
             <li><a href="Street.php">Streetwear</a></li>
             <li><a href="PreColaboracion.html">Colaboraciones</a></li>
-            <li><a href="Form.html">Únete a la familia</a></li>
+            <li><a href="Formulario.php">Únete a la familia</a></li>
          </ul>
       </nav>
    </header>

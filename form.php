@@ -11,8 +11,8 @@ if($conn->connect_error){
 
 <?php 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $Nombre = $_POST["Nombre"];
-    $Apellido = $_POST["Apellido"];
+    $Nombre = $_POST["nombre"];
+    $Apellido = $_POST["apellido"];
     $correoElectronico = $_POST["correoElectronico"];
     
     $sql = "INSERT INTO formulario(nombre,apellido,correoElectronico) VALUES('$Nombre','$Apellido','$correoElectronico')";
