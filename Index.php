@@ -2,8 +2,6 @@
     include 'connection.php';
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,6 +23,10 @@
             <li><a href="Formulario.php">Únete a la familia</a></li>
          </ul>
       </nav>
+      <form action="buscar.php" method="GET">
+         <input type="text" name="query" placeholder="Buscar productos...">
+         <button type="submit">Buscar</button>
+      </form>
    </header>
 
    <section class="Seccion1">

@@ -31,7 +31,6 @@ function procederCompra() {
     document.getElementById("formulario-compra").style.display = "block";
 }
 
-
 document.addEventListener('DOMContentLoaded', actualizarCarrito);
 
 
