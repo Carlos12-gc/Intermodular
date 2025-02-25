@@ -1,4 +1,6 @@
-
+<?php
+    include 'connection.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,22 +24,26 @@
     <section class="Parrafo1">
         <p>Dalo todo con en tus entrenamientos</p>
     </section>
-    <section class="Parrafo2">
-        <ul>
-            <li class="Parrafo2li">
-               <img src="/ProyectoIntermodular/Images/AlphaFly.png" alt="Producto1">
-                <p>NIKE AlphaFly3</p>
-                <p class="precio">150€</p>
-                <button class="btn comprar">Comprar</button>
-            </li>
-            <li class="Parrafo2li">
-                <img src="/ProyectoIntermodular/Images/supernovarise.jpg" alt="Producto 2">
-                <p>Adidas supernovarise</p>
-                <p class="precio">180€</p>
-                <button class="btn comprar">Comprar</button>
-            </li>
-        </ul>
-    </section>
+    <?php
+    $sql = "SELECT * FROM productos";
+    $result = $conn->query($sql);
+    ?>
+
+    <?php
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) { ?>
+            <section class="Parrafo2">
+                <ul>
+                    <li class="Parrafo2li">
+                        <img src="<?= htmlspecialchars($row['Imagen']) ?>" alt="">
+                        <p><?= htmlspecialchars($row['nombre']) ?></p>
+                        <p class="precio"><?= htmlspecialchars($row['Precio']) ?>€</p>
+                        <button class="btn comprar">Comprar</button>
+                    </li>
+                </ul>
+            </section>
+        <?php }
+    } ?>
     <section class="Parrafo4">
         <center>
             <p>Coach lukas mueller te muestra las zapatillas en accion desde alemania mostrando como es una perparacion
@@ -48,8 +54,7 @@
         <center>
             <video width="640" height="360" controls>
                 <source src="/ProyectoIntermodular/Video/videoplayback.mp4" type="video/mp4">
-                
-              </video>
+            </video>
         </center>
     </section>
 </body>
