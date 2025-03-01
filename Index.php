@@ -30,7 +30,6 @@ $usuario = isset($_SESSION['nombre']) ? $_SESSION['nombre'] : 'Invitado';
             <li><a href="Deporte.php">Deporte</a></li>
             <li><a href="Formal.php">Formal</a></li>
             <li><a href="Street.php">Streetwear</a></li>
-            <li><a href="PreColaboracion.html">Colaboraciones</a></li>
             <li><a href="Formulario.php">Únete a la familia</a></li>
             <li>
                 Bienvenido, <?php echo $usuario; ?> 
