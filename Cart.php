@@ -34,19 +34,8 @@
         </div>
     </div>
 
-    <div id="productos">
-        <div class="producto" data-id="1" data-nombre="Producto 1" data-precio="10">
-            <h3>Producto 1</h3>
-            <p>Precio: €10</p>
-            <button onclick="agregarAlCarrito(1,'Producto 1',10)">Añadir al carrito</button>
-        </div>
-
-        <div class="producto" data-id="2" data-nombre="Producto 2" data-precio="20">
-            <h3>Producto 2</h3>
-            <p>Precio: €20</p>
-            <button onclick="agregarAlCarrito(2,'Producto 2',20)">Añadir al carrito</button>
-        </div>
-    </div>
+  
+  
 
     <div class="carrito">
         <h2>Carrito de Compras</h2>
@@ -65,6 +54,7 @@
             <input type="text" id="direccion" name="direccion" required>
 
             <button type="submit">Realizar compra</button>
+            <button type="delete">Eliminar compra</button>
         </form>
     </div>
 
