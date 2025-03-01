@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nombre = $_POST['nombre'];
         $password = $_POST['password'];
 
-        $sql = "SELECT * FROM users WHERE nombre = '$nombre' AND password = '$password'";
+        $sql = "SELECT * FROM formulario WHERE nombre = '$nombre' AND password = '$password'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <form action="login.php" method="POST">
-        <input type="text" name="username" placeholder="Username" required>
+        <input type="text" name="nombre" placeholder="nombre" required>
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit" name="login">Login</button>
     </form>
