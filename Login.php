@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Asignar rol de usuario por defecto
         $role = 'user';
 
-        $sql = "INSERT INTO users (username, apellido, email, password, role) VALUES ('$nombre', '$apellido', '$correoElectronico', '$password', '$role')";
+        $sql = "INSERT INTO formulario (nombre, apellido, correoElectronico, password) VALUES ('$nombre', '$apellido', '$correoElectronico', '$password')";
         if ($conn->query($sql) === TRUE) {
             echo "Registro exitoso. Ahora puedes iniciar sesión.";
         } else {
@@ -21,10 +21,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     } elseif (isset($_POST['login'])) {
         // Inicio de sesión
-        $username = $_POST['username'];
+        $nombre = $_POST['nombre'];
         $password = $_POST['password'];
 
-        $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+        $sql = "SELECT * FROM users WHERE nombre = '$nombre' AND password = '$password'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
