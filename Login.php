@@ -29,12 +29,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
-            $_SESSION['nombre'] = $user['nombre']; 
+            $_SESSION['nombre'] = $user['nombre'];
+
+            // Redirigir al usuario al index.php
+            header("Location: index.php");
+            exit(); // Importante para evitar que el script continúe ejecutándose
         } else {
             echo "Invalid username or password";
         }
     }
-}   
+}
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <form action="login.php" method="POST">
-        <input type="text" name="nombre" placeholder="nombre" required>
+        <input type="text" name="nombre" placeholder="Nombre" required>
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit" name="login">Login</button>
     </form>
