@@ -29,14 +29,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
-            $_SESSION['username'] = $user['username'];
-            $_SESSION['role'] = $user['role']; // 'admin' or 'user'
-            header('Location: administrador.php');
+            $_SESSION['nombre'] = $user['nombre']; 
         } else {
             echo "Invalid username or password";
         }
     }
-}
+}   
 ?>
 
 <!DOCTYPE html>
