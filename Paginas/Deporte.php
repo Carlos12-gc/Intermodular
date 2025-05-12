@@ -7,8 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/Style/StyleDeporte.css">
+    <title>Deporte</title>
+    <link rel="stylesheet" href="/StSyle/StyleDeporte.css">
     <script src="Script.js"></script> <!-- Incluir Script.js -->
 </head>
 <body>
@@ -18,7 +18,6 @@
             <ul>
                 <li><img src="/ProyectoIntermodular/Images/nikey.png" alt="nikey"></li>
                 <li><img src="/ProyectoIntermodular/Images/adidas.webp" alt="adidas"></li>
-                <li><img src="" alt=""></li>
             </ul>
         </nav>
     </header>
@@ -55,7 +54,7 @@
         
         <center>
             <video width="640" height="360" controls>
-                <source src="/ProyectoIntermodular/Video/videoplayback.mp4" type="video/mp4">
+                <source src="/Video/videoplayback.mp4" type="video/mp4">
             </video>
         </center>
     </section>

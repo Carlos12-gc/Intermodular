@@ -15,12 +15,11 @@
       <nav class="logo">
          AreaStyle
          <ul>
-            <li><a href="Cart.php">Carrito</a></li>
-            <li><a href="Deporte.php">Deporte</a></li>
-            <li><a href="Formal.php">Formal</a></li>
-            <li><a href="Street.php">Streetwear</a></li>
-            <li><a href="PreColaboracion.html">Colaboraciones</a></li>
-            <li><a href="Formulario.php">Únete a la familia</a></li>
+            <li><a href="./Cart.php">Carrito</a></li>
+            <li><a href="./Deporte.php">Deporte</a></li>
+            <li><a href="./Formal.php">Formal</a></li>
+            <li><a href="./Street.php">Streetwear</a></li>
+            <li><a href="./Login.php">Únete a la familia</a></li>
          </ul>
       </nav>
       <form action="buscar.php" method="GET">
@@ -48,11 +47,11 @@
          </li>
          <li>
             <p>Casual</p>
-            <a href="Street.php"><img src="Images/street.png" alt="Street"></a>
+            <a href="./Street.php"><img src="Images/street.png" alt="Street"></a>
          </li>
          <li>
             <p>Deportivo dominguero</p>
-            <a href="Deporte.php"><img src="Images/deporte.png" alt="Deporte"></a>
+            <a href="./Deporte.php"><img src="Images/deporte.png" alt="Deporte"></a>
          </li>
       </ul>
    </section>
