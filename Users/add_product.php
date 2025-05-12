@@ -22,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-// filepath: /c:/xampp/htdocs/ProyectoIntermodular/remove_product.php
 <?php
 session_start();
 if (!isset($_SESSION['username']) || ($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'user')) {

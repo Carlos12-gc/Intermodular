@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="ropa para hombres, moda masculina, streetwear, ropa de diseñador, ropa deportiva, marcas de lujo, tendencias de moda, outfits hombre">
     <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="StyleFormulario.css">
+    <link rel="stylesheet" href="/Style/StyleFormulario.css">
     <title>Te damos la bienvenida</title>
 </head>
 <body>
-    <form action="login.php" method="post">
+    <form action="Login.php" method="post">
         <div id="formulario">
             <center>       
                 <h1>Registro de usuarios</h1>
