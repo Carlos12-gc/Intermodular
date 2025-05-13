@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deporte</title>
-    <link rel="stylesheet" href="/StSyle/StyleDeporte.css">
+    <link rel="stylesheet" href="./Style/StyleFormal.css">
     <script src="Script.js"></script> <!-- Incluir Script.js -->
 </head>
 <body>

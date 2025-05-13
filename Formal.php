@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formal</title>
-    <link rel="stylesheet" href="/Style/StyleFormal.css">
+    <link rel="stylesheet" href="./Style/StyleFormal.css">
     <script src="Script.js"></script> 
 </head>
 <body>
@@ -16,9 +16,9 @@
         <div class="logo">Para ocasiones importantes </div>
         <nav>
             <ul>
-                <li><img src="/ProyectoIntermodular/Images/mssd.jpg" alt="MasimoDutti"></li>
-                <li><img src="/ProyectoIntermodular/Images/pik.webp" alt="Pikolinos"></li>
-                <li><img src="/ProyectoIntermodular/Images/TommyHlfg.png" alt="TommyHlfg"></li>
+                <li><img src="./Images/mssd.jpg" alt="MasimoDutti"></li>
+                <li><img src="./Images/pik.webp" alt="Pikolinos"></li>
+                <li><img src="./Images/TommyHlfg.png" alt="TommyHlfg"></li>
             </ul>
         </nav>
     </header>
