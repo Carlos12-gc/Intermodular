@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="StyleStreet.css">
+    <link rel="stylesheet" href ="/ProyectoIntermodular/Style/StyleDeporte.css">
     <script src="Script.js"></script> <!-- Incluir Script.js -->
 </head>
 <body>
@@ -55,7 +55,7 @@
         
         <center>
             <video width="640" height="360" controls>
-                <source src="/ProyectoIntermodular/Video/videoplayback.mp4" type="video/mp4">
+                <source src="/Video/videoplayback.mp4" type="video/mp4">
             </video>
         </center>
     </section>
