@@ -9,39 +9,19 @@
     <title>Te damos la bienvenida</title>
 </head>
 <body>
-    <form action="login.php" method="post">
-        <div id="formulario">
-            <center>       
-                <h1>Registro de usuarios</h1>
-            </center>
-            <label for="nombre"></label>
-            <input type="text" name="nombre" placeholder="Introduce tu nombre" required>
+  <form action="login.php" method="post">
+    <input type="text" name="nombre" placeholder="Introduce tu nombre" required>
+    <input type="text" name="apellido" placeholder="Introduce tu apellido" required>
+    <input type="email" name="correoElectronico" placeholder="Introduce tu Email" required>
+    <input type="password" name="password" placeholder="Introduce tu contraseña" required>
+    <button type="submit" name="register">Registrarse</button>
+</form>
 
-            <label for="apellido"></label>
-            <input type="text" name="apellido" placeholder="Introduce tu apellido" required>
+<form action="login.php" method="post">
+    <input type="text" name="username" placeholder="Introduce tu nombre" required>
+    <input type="password" name="password" placeholder="Introduce tu contraseña" required>
+    <button type="submit" name="login">Iniciar sesión</button>
+</form>
 
-            <label for="correoElectronico"></label>
-            <input type="email" name="correoElectronico" placeholder="Introduce tu Email" required>
-
-            <label for="password"></label>
-            <input type="password" name="password" placeholder="Introduce tu contraseña" required>
-
-            <button type="submit" name="register">Enviar</button>
-        </div>
-    </form>
-    <form action="login.php" method="post">
-        <div id="sesion">
-            <center>
-                <h1>Inicio de sesion</h1>
-            </center>
-            <label for="username"></label>
-            <input type="text" name="username" placeholder="Introduce tu nombre" required>
-
-            <label for="password"></label>
-            <input type="password" name="password" placeholder="Introduce tu contraseña" required>
-
-            <button type="submit" name="login">Iniciar sesion</button>
-        </div>
-    </form>
 </body>
 </html>

@@ -2,53 +2,59 @@
 session_start();
 include 'connection.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // REGISTRO
     if (isset($_POST['register'])) {
-        // Registro de usuario
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
-        $correoElectronico = $_POST['correoElectronico'];
-        $password = $_POST['password'];
+        $correo = $_POST['correoElectronico'];
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        // Asignar rol de usuario por defecto
-        $role = 'user';
-
-        $sql = "INSERT INTO formulario (nombre, apellido, correoElectronico, password) VALUES ('$nombre', '$apellido', '$correoElectronico', '$password')";
-        if ($conn->query($sql) === TRUE) {
-            echo "Registro exitoso. Ahora puedes iniciar sesión.";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-    } elseif (isset($_POST['login'])) {
-        // Inicio de sesión
-        $nombre = $_POST['nombre'];
-        $password = $_POST['password'];
-
-        $sql = "SELECT * FROM formulario WHERE nombre = '$nombre' AND password = '$password'";
-        $result = $conn->query($sql);
+        // Verifica si ya existe el correo
+        $checkQuery = "SELECT * FROM formulario WHERE correoElectronico = '$correo'";
+        $result = $conn->query($checkQuery);
 
         if ($result->num_rows > 0) {
-            $user = $result->fetch_assoc();
-            $_SESSION['nombre'] = $user['nombre']; 
+            echo "Este correo ya está registrado. Inicia sesión.";
         } else {
-            echo "Invalid username or password";
+            $sql = "INSERT INTO formulario (nombre, apellido, correoElectronico, password) 
+                    VALUES ('$nombre', '$apellido', '$correo', '$password')";
+            if ($conn->query($sql) === TRUE) {
+                $_SESSION['nombre'] = $nombre;
+                header("Location: index.php");
+                exit();
+            } else {
+                echo "Error al registrar: " . $conn->error;
+            }
+        }
+
+    // LOGIN
+    } elseif (isset($_POST['login'])) {
+        $nombre = $_POST['nombre'];  // asegurate de usar el mismo input que en el formulario
+        $password = $_POST['password'];
+
+        $sql = "SELECT * FROM formulario WHERE nombre = '$nombre'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows == 1) {
+            $row = $result->fetch_assoc();
+            if (password_verify($password, $row['password'])) {
+                $_SESSION['nombre'] = $row['nombre'];
+                header("Location: index.php");
+                exit();
+            } else {
+                echo "Contraseña incorrecta.";
+            }
+        } else {
+            echo "Usuario no encontrado.";
         }
     }
-}   
-?>
+}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    <form action="login.php" method="POST">
-        <input type="text" name="nombre" placeholder="nombre" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit" name="login">Login</button>
-    </form>
-</body>
-</html>
+$conn->close();
+?>
+<?php
+session_start();
+session_destroy();
+header("Location: index.php");
+exit();
