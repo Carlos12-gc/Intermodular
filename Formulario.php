@@ -10,6 +10,7 @@
 </head>
 <body>
   <form action="login.php" method="post">
+    <input type="hyden" name="register">
     <input type="text" name="nombre" placeholder="Introduce tu nombre" required>
     <input type="text" name="apellido" placeholder="Introduce tu apellido" required>
     <input type="email" name="correoElectronico" placeholder="Introduce tu Email" required>
@@ -18,7 +19,8 @@
 </form>
 
 <form action="login.php" method="post">
-    <input type="text" name="username" placeholder="Introduce tu nombre" required>
+    <input type="hyden" name="login">
+    <input type="text" name="nombre" placeholder="Introduce tu nombre" required>
     <input type="password" name="password" placeholder="Introduce tu contraseña" required>
     <button type="submit" name="login">Iniciar sesión</button>
 </form>

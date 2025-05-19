@@ -18,8 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Este correo ya está registrado. Inicia sesión.";
         } else {
             $sql = "INSERT INTO formulario (nombre, apellido, correoElectronico, password) 
-                    VALUES ('$nombre', '$apellido', '$correo', '$password')";
+                    VALUES ($nombre, $apellido, $correo, $password)";
             if ($conn->query($sql) === TRUE) {
+                echo $sql;
+          
                 $_SESSION['nombre'] = $nombre;
                 header("Location: index.php");
                 exit();
